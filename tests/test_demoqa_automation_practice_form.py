@@ -29,7 +29,7 @@ def test_complete_form():
     browser.all('label[for^="hobbies-checkbox"]').element_by(have.exact_text('Sports')).click()
     browser.all('label[for^="hobbies-checkbox"]').element_by(have.exact_text('Reading')).click()
 
-    browser.element('#uploadPicture').send_keys(os.path.abspath('.pytest_cache/images/a_nice_cat_image.jpeg'))
+    browser.element('#uploadPicture').send_keys(os.path.abspath('images/a_nice_cat_image.jpeg'))
 
     browser.element('#currentAddress').type('My current address is very long\n'
                                             'and should be written in several lines\n'
