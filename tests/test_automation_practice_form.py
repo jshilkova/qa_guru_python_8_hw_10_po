@@ -1,11 +1,11 @@
 from datetime import date
+
+from demoqa_tests.application import app
 from demoqa_tests.data.users import User, Hobby
-from demoqa_tests.model.pages.registration_page import RegistrationPage
 
 
 def test_complete_form():
-    registration_page = RegistrationPage()
-    registration_page.open()
+    app.registration_page.open()
 
     julia = User(
         'Iuliia',
@@ -22,6 +22,6 @@ def test_complete_form():
         'Panipat'
     )
 
-    registration_page.register(julia)
+    app.registration_page.register(julia)
 
-    registration_page.should_have_registered(julia)
+    app.registration_page.should_have_registered(julia)
