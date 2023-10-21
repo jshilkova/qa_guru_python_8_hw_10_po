@@ -1,6 +1,6 @@
 from datetime import date
-from tests.data.users import User, Hobby
-from tests.model.pages.registration_page import RegistrationPage
+from demoqa_tests.data.users import User, Hobby
+from demoqa_tests.model.pages.registration_page import RegistrationPage
 
 
 def test_complete_form():

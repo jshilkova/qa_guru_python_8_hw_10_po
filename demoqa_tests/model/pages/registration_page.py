@@ -3,7 +3,7 @@ from pathlib import Path
 from selene import browser, have
 
 import tests
-from tests.data.users import User
+from demoqa_tests.data.users import User
 
 
 class RegistrationPage:
