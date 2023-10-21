@@ -1,10 +1,13 @@
 import dataclasses
+import enum
+from datetime import datetime
 
-@dataclasses.dataclass
-class DateOfBirth:
-    day: str
-    month: str
-    year: str
+
+class Hobby(enum.Enum):
+    sports = "Sports"
+    reading = "Reading"
+    music = "Music"
+
 
 @dataclasses.dataclass
 class User:
@@ -13,14 +16,10 @@ class User:
     email: str
     gender: str
     mobile: str
-    date_of_birth: DateOfBirth
+    date_of_birth: datetime.date
     subjects: list[str]
     hobbies: list[str]
     picture: str
     address: str
     state: str
     city: str
-
-
-
-
