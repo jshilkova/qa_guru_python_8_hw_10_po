@@ -1,12 +1,15 @@
 from datetime import date
 
+import allure
+
 from demoqa_tests.application import app
 from demoqa_tests.data.users import User, Hobby
 
 
+@allure.feature("Registration")
+@allure.story("Complete registration form")
+@allure.title("Test extended registration form")
 def test_complete_form():
-    app.registration_page.open()
-
     julia = User(
         'Iuliia',
         'Shilkova',
@@ -22,6 +25,11 @@ def test_complete_form():
         'Panipat'
     )
 
-    app.registration_page.register(julia)
+    with allure.step("Open registration form"):
+        app.complete_registration.open()
 
-    app.registration_page.should_have_registered(julia)
+    with allure.step("Register the user"):
+        app.complete_registration.register(julia)
+
+    with allure.step("Check registered user"):
+        app.complete_registration.should_have_registered(julia)
