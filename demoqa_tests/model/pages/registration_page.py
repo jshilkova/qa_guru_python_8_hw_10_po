@@ -9,7 +9,7 @@ from demoqa_tests.data.users import User
 class RegistrationPage:
     def open(self):
         browser.open('/automation-practice-form')
-        browser.all('[id^=google_ads][id$=container__]').with_(timeout=100).wait_until(
+        browser.all('[id^=google_ads][id$=container__]').with_(timeout=10).wait_until(
             have.size_greater_than_or_equal(3)
         )
         browser.all('[id^=google_ads][id$=container__]').perform(command.js.remove)
