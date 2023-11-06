@@ -16,11 +16,6 @@ def pytest_addoption(parser):
         '--browser_version',
         default='100.0'
     )
-    parser.addoption(
-        '--browser_size',
-        default='100.0'
-    )
-
 
 @pytest.fixture(scope="function", autouse=True)
 def browser_setup(request):
